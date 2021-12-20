@@ -1,0 +1,154 @@
+
+<div style="background-color: #fdfdfd;">
+ 
+   <div class="m-section__content">
+        <div class="m-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+            <div class="m-demo__preview m-demo__preview--badge">
+                    <div>
+                            <a href="./gestionEnquete" class="btn btn-outline-success m-btn m-btn--icon m-btn--outline-2x m-btn--pill m-btn--air">
+                                <span>
+                                    <i class="la la-arrow-circle-left"></i>
+                                    <span>précédent</span>
+                                </span>
+                            </a>
+                        </div>
+                <div class="m-divider">
+                    <span></span>
+                    <span><h3 class="m--font-brand">Création d'un Formulaire</h3></span>
+                    <span></span>
+                </div>
+                <br>
+                <div class="row">
+                        <div class="col-md-2">
+                       
+                        </div>
+                        <div class="col-md-1">
+                                <h5><strong>Client :</strong></h5>
+                                </div>
+                        <div class="col-md-5" >
+
+                                <ui-select ng-model="cli.selected"  theme="bootstrap">
+                                        <ui-select-match placeholder="Sélectionnez un client...">{{$select.selected.Prenom}} {{$select.selected.Nom}}</ui-select-match>
+                                        <ui-select-choices repeat="client in listClient| filter: $select.search">
+                                                {{client.Prenom}} {{client.Nom}}
+                                        </ui-select-choices>
+                                        </ui-select>
+                              <!-- <select class="selectpicker select-client"  data-live-search="true" ng-model="client">
+                                   <option ng-repeat="client in listClient">{{client.Prenom}} {{client.Nom}}</option>
+                                </select>-->
+                               
+                        </div>
+                      
+                </div>
+                <br>
+                <div class="row">
+                   
+                      
+
+                        <div class="col-md-2"></div>
+                        <div class="col-md-1">
+                            <h5 ><strong>Titre :</strong></h5>
+                        </div>
+                        <div class="col-md-5">                                
+                                <input type="text" class="form-control m-input" placeholder="Titre" id="generalSearch" ng-model="Titre">
+                                </div>
+                </div>
+                <br>
+                <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-1">
+                            <h5 ><strong>Description : </strong></h5>
+                        </div>
+                        <div class="col-md-5">                   
+                                 <textarea class="form-control" aria-label="With textarea" placeholder="Description" ng-model="Description"></textarea>
+                        </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <hr/>
+        <div class="col-md-6">
+            <div class="panel panel-default" style="width:120%">
+                <div class="panel-heading" style="background: linear-gradient(to right, #6600ff 0%, #cc0066 100%);">
+                    <h3 class="panel-title text-white" ><strong>Form</strong></h3>
+                </div>
+                <div fb-builder="default" style="min-height:600px"></div>
+                <div class="panel-footer">
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="isShowScope" />
+                            Show scope
+                        </label>
+                    </div>
+                    <pre ng-if="isShowScope">{{form}}</pre>
+                </div>
+            </div>
+            <button type="button" class="btn m-btn m-btn--pill m-btn--air m-btn--gradient-from-focus m-btn--gradient-to-danger " data-toggle="modal" data-target="#myModal">saisir Formulaire</button>
+
+        </div>
+    
+        <div class="col-md-6">
+          <center><h3><u>Basic Components</u></h3></center>
+            <div fb-components class="scroller"></div>
+        </div>
+    </div>
+    <!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog ">
+
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background: linear-gradient(to right, #6600ff 0%, #cc0066 100%);">
+  
+        <h3>Formulaire</h3>
+      </div>
+      <div class="modal-body">
+      
+          <hr style="width: 60%">
+          <div class="row">
+        
+              <form class="form-horizontal" >
+                  
+                <div ng-model="input" fb-form="default" fb-default="defaultValue" ></div>
+                <br>
+              </form>
+            
+          </div>
+          <div class="checkbox">
+                <label><input type="checkbox" ng-model="isShowScope" ng-init="isShowScope=false" />
+                    Show scope
+                </label>
+            </div>
+            <pre ng-if="isShowScope">{{input}}</pre>
+          <div class="row">
+              <div class="col-md-12 footer"></div>
+          </div>
+      </div>
+      <hr/>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <div class="col-md-6 col-md-offset-6">
+                          <input type="submit" ng-click="submit()" class="btn m-btn m-btn--pill m-btn--air m-btn--gradient-from-focus m-btn--gradient-to-danger " value="Enregistrer"/>
+                      </div>
+                  </div>                
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn m-btn--pill m-btn--air btn-outline-metal m-btn m-btn--custom" data-dismiss="modal">Fermer</button>
+                </div>
+        </div>
+        <br/>
+    </div>
+
+  </div>
+</div>
+<!--<style>
+    .select-client:nth-child(2) {
+  display:none !important;
+}
+</style>-->

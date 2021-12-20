@@ -1,0 +1,41 @@
+    <!-- The Modal -->
+ 
+                            <!-- Modal body -->
+                            <div class="modal-body" >
+                        
+                                <div class="container-fluid">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <div class="card" >
+                                          <div class="card-header text-white" style="background: linear-gradient(to right, #6600ff 0%, #cc0066 100%);">
+                                            <center><h4 class="card-title" >{{title}} </h4></center>
+                                          </div>
+                                         
+                                          <div class="card-body">
+                                            <!--<canvas id="bar" class="chart chart-bar"
+                                chart-data="data" chart-labels="labels" chart-series="label">
+                                          </canvas>-->
+                                          </div>
+                                          <canvas id="bar-chart" width="800" height="450" ng-if="type=='Bar chart'"></canvas>
+                                          <canvas id="line-chart" width="800" height="450" ng-if="type=='Line chart'"></canvas>
+                                          <canvas id="pie-chart" width="800" height="450" ng-if="type=='Pie chart'"></canvas>
+                                          <canvas id="radar-chart" width="800" height="450" ng-if="type=='Radar chart'"></canvas>
+                                          <canvas id="polar-chart" width="800" height="450" ng-if="type=='Polar area'"></canvas>
+                                          <canvas id="doughnut-chart" width="800" height="450" ng-if="type=='Doughnut chart'"></canvas>
+                                          <canvas id="bar-chart-horizontal" width="800" height="450" ng-if="type=='Horizontal bars'"></canvas>
+                                          <canvas id="bar-chart-grouped" width="800" height="450" ng-if="type=='Grouped bar'"></canvas>
+                                          <canvas id="mixed-chart" width="800" height="450" ng-if="type=='Mixed charts'"></canvas>
+                                          <canvas id="bubble-chart" width="800" height="450" ng-if="type=='Bubble chart'"></canvas>
+                                       
+                                          
+                                          <div class="col-md-2">
+                                              <button type="button" class="btn m-btn--pill m-btn--air btn-outline-metal m-btn m-btn--custom" ng-click="cancel()">Fermer</button>
+                                         
+                                        </div>
+                                      </div>
+                                 
+                                    </div>
+                                  </div>
+                            </div>
+                          
+           

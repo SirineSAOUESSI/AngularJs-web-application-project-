@@ -1,0 +1,88 @@
+    <!-- The Modal -->
+ 
+                            <!-- Modal body -->
+                            <div class="modal-body" >
+                        
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="card" >
+                                              <div class="card-header text-white" style="background: linear-gradient(to right, #6600ff 0%, #cc0066 100%);">
+                                                <center><h4 class="card-title" >{{title}} </h4></center>
+                                              </div>
+                                              <br>
+                                            
+                                              <div class="card-body">
+                                                  <div class="row">
+                                                      <div class="col-md-11">
+                                                              <div class="form-group m-form__group row align-items-center">
+                                                                  <div class="col-md-6">
+                                                                      <div class="m-input-icon m-input-icon--left">
+                                                                          <input type="text" class="form-control m-input" placeholder="Search" id="generalSearch" ng-model="Search">
+                                                                          <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                              <span><i class="la la-search"></i></span>
+                                                                          </span>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                    
+                                                  </div>
+                                                  <div class="row">
+                                                        <div class="col-md-1"></div>
+                                                         <div class="col-md-10">
+                                                         <table id="example" class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+               
+               
+                                                           <thead>
+                                                             <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Nom</th>
+                                                                    <th>Les Jours</th>
+                                                                    <th>Les Mois</th>
+                                                                    <th>Durer</th>
+                                                             </tr>
+                                                           </thead>
+                                                 
+                                                 
+                                                           <tfoot>
+                                                             <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Nom</th>
+                                                                    <th>Les Jours</th>
+                                                                    <th>Les Mois</th>
+                                                                    <th>Durer</th>
+                                                             </tr>
+                                                           </tfoot>
+                                                 
+                                                 
+                                                           <tbody>
+                                                                <tr ng-repeat="agent in Agent_EventTermine"  >
+                                                                        <td>{{$index}}</td>
+                                                                        <td>{{agent.Prenom}} {{agent.Nom}}</td>
+                                                                        <td>{{agent.jour_intervention}}</td>
+                                                                        <td>{{agent.mois_intervention}}</td>
+                                                                        <td>{{agent.dates_intervention}}</td>
+                                                                      
+                                                                    </tr>			
+                                                           </tbody>
+                                                 
+                                                 
+                                                         </table>
+                                                       </div>
+                                                   </div>
+                                              <div class="row">
+                                                  <div class="col-md-10">
+                                                      </div>
+                                                  <div class="col-md-2">
+                                                 <button type="button" class="btn m-btn--pill m-btn--air btn-outline-metal m-btn m-btn--custom" ng-click="cancel()">Fermer</button>
+                                                 </div>  
+                                             </div>
+                                              </div>
+                                             
+                                          </div>
+                                     
+                                        </div>
+                                      </div>
+                                </div>
+                

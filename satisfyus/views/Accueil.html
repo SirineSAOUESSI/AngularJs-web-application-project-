@@ -1,0 +1,91 @@
+
+<div class="row">
+<div class="col-sm-4">
+<div class="m-portlet m-portlet--bordered-semi m-portlet--widget-fit m-portlet--full-height m-portlet--skin-light  m-portlet--rounded-force">
+       <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                     <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text m--font-light">
+                                  Les Enquetes
+                            </h3>
+                     </div>
+              </div>
+       </div>
+       <div class="m-portlet__body">
+              <div class="m-widget17">
+                     <div class="m-widget17__visual m-widget17__visual--chart m-portlet-fit--top m-portlet-fit--sides m--bg-danger">
+                            <div class="m-widget17__chart" style="height:320px;">
+                                   <canvas id="m_chart_activities"></canvas>
+                            </div>
+                     </div>
+                     <div class="m-widget17__stats">
+                            <div class="m-widget17__items m-widget17__items-col1">
+                                   <div class="m-widget17__item">
+                                          <span class="m-widget17__icon">
+                                                 <a href="#" class="btn btn-info m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                                                        <i class="fa fa-chart-bar "></i>
+                                                 </a>  
+                                          </span>
+                                          <span class="m-widget17__subtitle">
+                                                 Enquetes
+                                          </span>
+                                          <span class="m-widget17__desc">
+                                                <strong> {{Nombre_Events}}</strong>
+                                          </span>
+                                   </div>
+                                   <div class="m-widget17__item">
+                                          <span class="m-widget17__icon">
+                                                 <a href="#" class="btn btn-info m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                                                        <i class="fa fa-chart-bar "></i>
+                                                </a> 
+                                          </span>
+                                          <span class="m-widget17__subtitle">
+                                                 Enquetes terminée      
+                                          </span>
+                                          <span class="m-widget17__desc">
+                                                 <strong>{{List_Termine.length}}</strong>
+                                          </span>
+                                   </div>
+                            </div>
+                            <div class="m-widget17__items m-widget17__items-col2">
+                                   <div class="m-widget17__item">
+                                          <span class="m-widget17__icon">
+                                             <a href="#" class="btn btn-info m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+                                                        <i class="fa fa-chart-bar "></i>
+                                            </a> 
+                                          </span>
+                                          <span class="m-widget17__subtitle">
+                                                 Enquetes en cours
+                                          </span>
+                                          <span class="m-widget17__desc">
+                                                   <strong>{{nombre_enquete_enCours}}</strong>     
+                                          </span>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+       </div>
+</div>
+</div>
+<div class="col-sm-4">
+       
+                   <div style="height:300px;width:600px;">
+                    <!-- SI Chart Bar-->
+                    <canvas id="bar"  class="chart chart-bar"
+                    chart-labels="chart.labels"
+                    chart-series="chart.series"
+                    chart-data="chart.data"
+                    chart-colors="chart.colors"
+                    chart-options="chart.options" ng-if="chart.type=='chart-bar'"></canvas>
+               
+                    </div>
+                    <br>
+                    <div style="height:300px;width:500px;">
+                     <canvas id="doughnut" class="chart chart-doughnut"
+                     chart-data="chart2.data" chart-colors="chart2.colors" chart-labels="chart2.labels" ng-if="chart2.type=='chart-doughnut'"></canvas>
+                     
+                     </div> 
+                     
+             
+</div>
+</div> 

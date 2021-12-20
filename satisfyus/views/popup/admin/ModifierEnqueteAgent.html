@@ -1,0 +1,52 @@
+<div class="modal-content">
+    <!-- Modal body -->
+    <div class="modal-body" >
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                <div class="card" >
+                    <div class="card-header text-white" style="background: linear-gradient(to right, #6600ff 0%, #cc0066 100%);">
+                    <center><h4 class="card-title" > {{title}} </h4></center>
+                    </div>
+                    <div class="card-body">
+                            <table class="table table-striped- table-bordered table-hover table-checkable" id="m_table_1">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>title</th>
+                                            <th>jour</th>
+                                            <th>mois</th>
+                                            <th>dates</th>
+                                            <th>H-D</th>
+                                            <th>H-F</th>
+                                            <th></th>
+                                            <th></th>
+                                         
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="agent in listee |filter:Search "  >
+                                            <td>{{$index}}</td>
+                                            <td>{{agent.title}}</td>
+                                            <td>{{agent.jour_intervention}}</td>
+                                            <td>{{agent.mois_intervention}}</td>
+                                            <td>{{agent.dates_intervention}}</td>
+                                            <td>{{agent.heure_debut}}</td>
+                                            <td>{{agent.heure_fin}}</td>
+                                            <td><a  href="#!/EnqueteCours"  ><i class="m-menu__link-icon fa fa-edit" ng-click="Affecter(agent,$index)"></i> </a></td>
+                                            <td><a  href="#!/EnqueteCours" ng-click="supprimer($index)" ><i class="m-menu__link-icon flaticon-delete"> </i> </a></td>
+                                        
+                                     
+                                        </tr>		
+                                    </tbody>
+                                </table>	
+                    </div>
+                </div>
+                </div>
+         
+            </div>
+            </div>
+    </div>
+
+</div>

@@ -1,0 +1,65 @@
+<div class="body-G">
+<br>
+<div class="container" ng-controller="ctrClientController">
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn m-btn m-btn--pill m-btn--air m-btn--gradient-from-focus m-btn--gradient-to-danger btn-lg" ng-click="ajouter('lg')">Ajouter Agent  <i class="m-menu__link-icon flaticon-plus"></i></button>
+
+</div>
+</br>
+        <div class="panel-heading border">
+          <h2>Tables Admins
+      </h2></div>
+            <!--begin: Datatable -->
+            <table id="example" class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+    
+    
+              <thead>
+                <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Tel </th>
+                        <th>Action</th>
+                </tr>
+              </thead>
+    
+    
+              <tfoot>
+                <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Tel </th>
+                        <th>Action</th>
+                </tr>
+              </tfoot>
+    
+    
+              <tbody>
+                    <tr ng-repeat="agent in listagents |filter:Search "  >
+                            <td>{{$index}}</td>
+                            <td>{{agent.Nom}} {{agent.Prenom}}</td>
+                            <td>{{agent.Email}}</td>
+                            <td>{{agent.Telephone}}</td>
+                            <td>		
+                                <div class="btn-group">		
+                                <button type="button" class="btn btn-sm btn-outline-primary m-btn m-btn--icon m-btn--icon-only m-btn--outline-2x m-btn--pill " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-more-1"></i></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./agents" ng-click="modifier($index)" ><i class="m-menu__link-icon fa fa-edit"></i> Modifier</a>
+                                    <a class="dropdown-item" href="./agents" ng-click="supprimer($index,agent.id_utilisateur)" ><i class="m-menu__link-icon flaticon-delete"> </i> Supprimer</a>
+                         
+                                </div>
+                        
+                            </td>
+                        </tr>	
+              </tbody>
+    
+    
+            </table>
+ </div>
+
+
+
+
+
+

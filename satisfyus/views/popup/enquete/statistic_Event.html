@@ -1,0 +1,79 @@
+<center><h1><strong>statistique de questionnaire</strong></h1></center>
+<table>
+    
+    <tr ng-repeat = "chart in Array_Statistic" ng-init="outerIndex = $index" >
+            
+        <td>
+                
+          <div style="height:200px;width:300px;"> {{$index+1 }}. <u><strong>{{listeNom_enquete[$index]}}</strong></u> </div> 
+          
+        </td>
+        <td>
+                   <div style="height:300px;width:300px;">
+                    <!-- SI Chart Bar-->
+                    <canvas id="bar"  class="chart chart-bar"
+                    chart-labels="chart.labels"
+                    chart-series="chart.series"
+                    chart-data="chart.data"
+                    chart-colors="chart.colors"
+                    chart-options="chart.options" ng-if="chart.type=='chart-bar'"></canvas>
+                    <!-- SI Chart Doughonut-->
+                    <canvas id="doughnut" class="chart chart-doughnut"
+                    chart-data="chart.data" chart-labels="chart.labels" ng-if="chart.type=='chart-doughnut'"></canvas>
+                     <!-- SI Chart Line-->
+                    <canvas id="line" class="chart chart-line" chart-data="chart.data"
+                    chart-labels="chart.labels" chart-series="series" chart-options="chart.options"
+                    chart-dataset-override="chart.datasetOverride" chart-click="chart.onClick" ng-if="chart.type=='chart-line'"></canvas>
+                     <!-- SI Chart Pie-->
+                    <canvas id="pie" class="chart chart-pie"
+                    chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options" ng-if="chart.type=='chart-pie'"></canvas>    
+                     <!-- SI Chart-Polar-Area-->
+                    <canvas id="polar-area" class="chart chart-polar-area"
+                    chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options" ng-if="chart.type=='chart-polar-area'"></canvas> 
+                    <!-- SI Chart-Horizontal-Bar-->
+                    <canvas id="base" class="chart-horizontal-bar"
+                    chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options" ng-if="chart.type=='chart-horizontal-bar'" ></canvas>
+                    <!-- SI Chart-Bubble-->
+                    <canvas id="base" class="chart-bubble" chart-data="chart.data"
+                     chart-series="chart.series" chart-colors="chart.colors" ng-if="chart.type=='chart-bubble'" ></canvas>
+                    <!-- SI Chart-Radar-->
+                    <canvas id="radar" class="chart chart-radar"
+                     chart-data="chart.data" chart-options="chart.options" chart-labels="chart.labels" ng-if="chart.type=='chart-radar'"></canvas>
+                    </div>
+           </td>
+           <td>       
+                <div style="height:300px;width:300px;">
+                        <div class="m-section__content">
+                                <table class="table table-bordered m-table m-table--border-brand m-table--head-bg-brand" >
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>Reponse</th>
+                                            <th>Nombre</th>
+                                            <th>Pourcentage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody  >
+                                            {{$index}}
+                                        <tr ng-repeat="item in table_statistique[$index]">
+                                         
+                                         <td>{{item.option}}</td>
+                                        <td>{{item.nombre}}</td>
+                                        <td>{{((item.nombre-0)/(table_statistique[outerIndex][table_statistique[outerIndex].length-1].nombre-0))*100}}%</td>
+                                    </tr>
+                                    </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                
+                    </div>    
+            </td>
+     
+
+
+</tr>
+</table>
+
+
+   

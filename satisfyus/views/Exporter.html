@@ -1,0 +1,53 @@
+
+<div class="body-G">
+    <div class="panel-heading border">
+      <h2>Exporter Les Statistiques</h2>
+    </div>
+    <br>
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <!--begin: Datatable -->
+        <table id="example" class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+
+
+          <thead>
+            <tr>
+                  <th>ID</th>
+                  <th>campany</th>
+                  <th>Etat</th>
+                  <th>Exporter</th>
+                
+            </tr>
+          </thead>
+
+
+          <tfoot>
+            <tr>
+                  <th>ID</th>
+                  <th>campany</th>
+                  <th>Etat</th>
+                  <th>satistique</th>
+            </tr>
+          </tfoot>
+
+
+          <tbody>
+                  <tr ng-repeat="event in List_Events |filter:Search "  >
+                          <td>{{$index}}</td>
+                          <td>{{event.title}}</td>
+                          <td><span class="flaticon-download-1"></span></td>
+                          <td>      
+                              <a href="#" class="btn btn-lg btn-outline-primary m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" ng-click="export(event)" >
+                                  <i class="fa fa-file-pdf"> PDF</i>
+                               </a>          
+                          </td>
+                      </tr>	
+          </tbody>
+
+
+        </table>
+      </div>
+      </div>
+
+</div>

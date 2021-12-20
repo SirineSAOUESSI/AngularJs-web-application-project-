@@ -1,0 +1,35 @@
+.card-profile {
+  margin-top: 30px;
+  text-align: center;
+}
+.card-image {
+  left: 30px;
+  text-align: left;
+}
+.card-profile .card-avatar {
+  margin: -50px auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.body-G{
+  background-color: #fdfdfd;
+}
+.card-image .card-avatar {
+  margin: -0px auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.img {
+  border-radius: 50%;
+}
+.b-bord{
+  border-radius: 25px;
+  border: 0.5px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 100px;
+}

@@ -1,0 +1,46 @@
+<div class="body-G">
+          <div class="panel-heading border">
+            <h2>Tables Agents Terminée</h2>
+          </div>
+    
+              <!--begin: Datatable -->
+              <table id="example" class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+      
+      
+                <thead>
+                  <tr>
+                        <th>ID</th>
+                        <th>Agent</th>
+                        <th>Email</th>
+                        <th>Enquete</th>
+                        <th>Etat</th>
+                        <th>Action</th>
+                  </tr>
+                </thead>
+      
+      
+                <tfoot>
+                  <tr>
+                        <th>ID</th>
+                        <th>Agent</th>
+                        <th>Email</th>
+                        <th>Enquete</th>
+                        <th>Etat</th>
+                        <th>Action</th>
+                  </tr>
+                </tfoot>
+      
+                <tbody>
+                        <tr ng-repeat="list in list_Termine |filter:Search "  >
+                                <td>{{$index}}</td>
+                                <td>{{list.Nom}} {{list.Prenom}}</td>
+                                <td>{{list.Email}}</td>
+                                <td>{{list.title}}</td>
+                                <td><img src="assets/img/user/termine.png"/></td>
+                                <td><a  href="#"  ng-click="return(list.id_event,list.id_agent)"><i class="m-menu__link-icon fa fa-redo"></i> </a></td>
+        
+                            </tr>	
+                </tbody>
+              </table>
+
+</div>     

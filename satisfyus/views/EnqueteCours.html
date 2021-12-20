@@ -1,0 +1,65 @@
+<div class="body-G">
+          <div class="panel-heading border">
+            <h2>Tables Enquêtes en Cours</h2>
+          </div>
+          <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+              <!--begin: Datatable -->
+              <table id="example" class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+      
+      
+                <thead>
+                  <tr>
+                        <th>ID</th>
+                        <th>campany</th>
+                        <th>Etat</th>
+                        <th>satistique</th>
+                        <th>Agents</th>
+                  </tr>
+                </thead>
+      
+      
+                <tfoot>
+                  <tr>
+                        <th>ID</th>
+                        <th>campany</th>
+                        <th>Etat</th>
+                        <th>satistique</th>
+                        <th>Agents</th>
+                  </tr>
+                </tfoot>
+      
+      
+                <tbody>
+                        <tr ng-repeat="event in ListEvents_EnCour |filter:Search "  >
+                                <td>{{$index}}</td>
+                                <td>{{event.title}}</td>
+                                <td> <img src="assets/img/user/connecte.png"/></td>
+                                <td>      
+                                    <a href="#" class="btn btn-outline-info m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" ng-click="satistic(event)" >
+                                        <i class="flaticon-diagram"></i>
+                                     </a>          
+                                </td>
+                                <td>      
+                                    <a href="#" class="btn btn-outline-primary m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" ng-click="Agents(event)">
+                                        <i class="flaticon-users-1"></i>
+                                     </a>          
+                                </td>
+                              
+                        
+                          
+                                
+                            </tr>	
+                </tbody>
+      
+      
+              </table>
+            </div>
+            </div>
+ 
+      </div>
+   
+    
+    

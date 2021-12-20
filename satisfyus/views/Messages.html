@@ -1,0 +1,226 @@
+<div class="row">
+ <div class="col-md-5"  >
+    <div class="m-portlet m-portlet--full-height m-portlet--tabs " style="height: 100%">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-tools">
+                <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary" role="tablist">
+                    <li class="nav-item m-tabs__item">
+                        <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
+                            <i class="flaticon-share m--hide"></i>
+                        Clients
+                        </a>
+                    </li>
+                    <li class="nav-item m-tabs__item">
+                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
+                        Agents
+                        </a>
+                    </li>
+                    <li class="nav-item m-tabs__item">
+                        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
+                         Admins
+                        </a>
+                    </li>
+                </ul>
+            </div>
+      
+        </div>
+        <br>
+        <div class="tab-content">
+            <div class="tab-pane active" id="m_user_profile_tab_1">
+                <form class="m-form m-form--fit m-form--label-align-right">
+                    
+                       <!--<div class="row">
+                        <div class="col-md-1" ></div>
+                        <div class="col-md-2" ><strong> List Clients :</strong></div>
+                        <div class="col-md-6" >
+                        <ui-select ng-model="cli.selected"  theme="bootstrap" >
+                            <ui-select-match placeholder="Sélectionnez un client...">{{$select.selected.Prenom}} {{$select.selected.Nom}}</ui-select-match>
+                            <ui-select-choices repeat="client in listClient| filter: $select.search">
+                                    {{client.Prenom}} {{client.Nom}}
+                            </ui-select-choices>
+                        </ui-select>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-4">
+                      <input type="button" value="afficher" ng-click="message()" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                     </div>
+                    </div>-->
+                  
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="form-group m-form__group row align-items-center">
+                                            <div class="col-md-12">
+                                                <div class="m-input-icon m-input-icon--left">
+                                                    <input type="text" class="form-control m-input" placeholder="Search" id="generalSearch" ng-model="Search">
+                                                    <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                        <span><i class="la la-search"></i></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                            </div>
+                            <br>
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6">
+                     
+                             <div ng-repeat="client in listClient |filter:Search "  >
+                                    <img src="assets/img/user/{{client.Photo}}" alt="Avatar" style="width:50px;border-radius: 60%;">
+                 
+                                  <p><a href="#" class="m-link" ng-click="message(client)" ><strong>{{client.Prenom}} {{client.Nom}}</strong> </a></p>      
+                            </div>      
+                            </div>
+                            </div>
+                
+                </form>
+            </div>
+            <div class="tab-pane " id="m_user_profile_tab_2">
+                    <!--<div class="row">
+                            <div class="col-md-1" ></div>
+                            <div class="col-md-2" ><strong> List Agents :</strong></div>
+                            <div class="col-md-6" >
+                            <ui-select ng-model="agen.selected"  theme="bootstrap" >
+                                <ui-select-match placeholder="Sélectionnez un agent...">{{$select.selected.Prenom}} {{$select.selected.Nom}}</ui-select-match>
+                                <ui-select-choices repeat="agent in listAgents| filter: $select.search">
+                                        {{agent.Prenom}} {{agent.Nom}}
+                                </ui-select-choices>
+                            </ui-select>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                          <div class="col-md-4"></div>
+                          <div class="col-md-4">
+                          <input type="button" value="afficher" ng-click="message()" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                         </div>
+                        </div>-->
+                        <br>
+                        <div class="row">
+                                <div class="col-md-12">
+                                        <div class="col-md-1"></div>
+                                        <div class="form-group m-form__group row align-items-center">
+                                            <div class="col-md-12">
+                                                <div class="m-input-icon m-input-icon--left">
+                                                    <input type="text" class="form-control m-input" placeholder="Search" id="generalSearch" ng-model="Search">
+                                                    <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                        <span><i class="la la-search"></i></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                            </div>
+                            <br>
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6">
+                     
+                             <div ng-repeat="agent in listAgents |filter:Search "  >
+                                    <img src="assets/img/user/{{agent.Photo}}" alt="Avatar" style="width:50px;border-radius: 60%;">
+                 
+                                  <p><a href="#m_user_profile_tab_2" class="m-link" ng-click="message(agent)" ><strong>{{agent.Prenom}} {{agent.Nom}}</strong> </a></p>      
+                            </div>      
+                            </div>
+                            </div>
+            </div>
+            <div class="tab-pane " id="m_user_profile_tab_3">
+                   <!-- <div class="row">
+                            <div class="col-md-1" ></div>
+                            <div class="col-md-2" ><strong> Admins </strong></div>
+                            <div class="col-md-6" >
+                            <ui-select ng-model="admi.selected"  theme="bootstrap" >
+                                <ui-select-match placeholder="Sélectionnez un admin...">{{$select.selected.Prenom}} {{$select.selected.Nom}}</ui-select-match>
+                                <ui-select-choices repeat="admin in listAdmins| filter: $select.search">
+                                        {{admin.Prenom}} {{admin.Nom}}
+                                </ui-select-choices>
+                            </ui-select>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="row">
+                          <div class="col-md-4"></div>
+                          <div class="col-md-4">
+                          <input type="button" value="afficher" ng-click="message(admin)" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                         </div>
+                        </div>-->
+                        <br>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-1"></div>
+                                        <div class="form-group m-form__group row align-items-center">
+                                            <div class="col-md-12">
+                                                <div class="m-input-icon m-input-icon--left">
+                                                    <input type="text" class="form-control m-input" placeholder="Search" id="generalSearch" ng-model="Search">
+                                                    <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                        <span><i class="la la-search"></i></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                            </div>
+                            <br>
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6">
+                     
+                             <div ng-repeat="admin in listAdmins |filter:Search "  >
+                                    <img src="assets/img/user/{{admin.Photo}}" alt="Avatar" style="width:50px;border-radius: 60%;">
+                 
+                                  <p><a href="#m_user_profile_tab_3" class="m-link" ng-click="message(admin)" ><strong>{{admin.Prenom}} {{admin.Nom}}</strong> </a></p>      
+                            </div>      
+                            </div>
+                            </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="col-md-1">
+       
+ </div>
+
+<div class="col-md-6" style=" display: flex;flex-direction: column;position: absolute;top: 0;bottom: 0;right:0;width:600px;overflow: hidden;">
+<div class="chat-messages">
+    <div class="chat-header">
+        <div class="angularjs-chat-logo"></div>
+        Application Chat
+    </div>
+    <div ng-repeat="message in messages">
+
+        <div class="sent-message" ng-class="{me: message.user.name == me.name}">
+            <span class="username">{{ message.user.name }}:</span>
+            {{ message.data }}
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+</div>
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- User Input -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!--<form ng-submit="send()" class="chat-input">
+    <input type="text" ng-model="textbox" autofocus>
+    <input type="submit" class="send-icon" value=" ">
+    <input type="submit" value=" "
+        class="sent-indicator {{ status }}">
+</form>-->
+
+<form ng-submit="send()" class="chat-input">
+        <input type="text" ng-model="textbox" autofocus>
+        <input type="submit" class="send-icon" value=" ">
+        <input type="submit" value=" "
+            class="sent-indicator {{ status }}">
+    </form>
+
+</div>
+</div>
+
